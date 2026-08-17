@@ -770,7 +770,10 @@
      post in the background and confirm inline instead.
      ==================================================================== */
 
-  var CAMPAIGN_EMAIL = 'campaign@example.com'; // REPLACE before launch
+  // Shown only when a form submission fails, so the visitor still has a
+  // way to reach the campaign. Keep in step with the mailto links in the
+  // markup.
+  var CAMPAIGN_EMAIL = 'vitanzar2@gmail.com';
 
   /**
    * Pre-selects a topic in the contact form.
