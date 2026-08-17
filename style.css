@@ -1614,41 +1614,76 @@ textarea {
 }
 
 
-/* --- Endorsement ------------------------------------------------------- */
-.endorsement {
-  max-width: 46rem;
-  margin: var(--space-2xl) auto 0;
+/* --- Endorsements ------------------------------------------------------ */
+.endorsements {
+  margin-top: var(--space-2xl);
   text-align: center;
 }
 
 /* Accent rule stands in for a section break, so no border is needed. */
-.endorsement::before {
+.endorsements::before {
   content: "";
   display: block;
   width: 2.75rem;
   height: 3px;
-  margin: 0 auto var(--space-lg);
+  margin: 0 auto var(--space-md);
   background: var(--c-accent);
+}
+
+.endorsements__label {
+  margin: 0 0 var(--space-lg);
+  font-family: var(--font-display);
+  font-size: var(--fs-eyebrow);
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  color: var(--c-steel-500);
+}
+
+/* Two-up where there is room; the quotes vary a lot in length, so the
+   cards align to the top and let the attributions sit where they land. */
+.endorsements__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  gap: var(--space-md);
+  align-items: start;
+  text-align: left;
+}
+
+.endorsement {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--space-lg);
+  border: 1px solid var(--c-paper-line);
+  border-top: 3px solid var(--c-accent);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.endorsement__quote {
+  flex: 1 1 auto;
 }
 
 .endorsement__quote p {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(1.28rem, 1.02rem + 1.3vw, 2rem);
+  font-size: clamp(1.12rem, 1rem + 0.62vw, 1.45rem);
   font-weight: 700;
-  line-height: 1.32;
-  letter-spacing: -0.022em;
+  line-height: 1.36;
+  letter-spacing: -0.018em;
   color: var(--c-ink);
   text-wrap: balance;
 }
 
 .endorsement__source {
   display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: center;
-  gap: 0.15rem 0.6rem;
+  flex-direction: column;
+  gap: 0.2rem;
   margin-top: var(--space-md);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--c-paper-line);
 }
 
 .endorsement__name {
@@ -1661,11 +1696,13 @@ textarea {
 
 .endorsement__detail {
   /* No text-transform: "USA (Ret.)" is a set military form and uppercasing
-     it to "USA (RET.)" would be wrong. */
-  font-size: var(--fs-small);
+     it to "USA (RET.)" would be wrong. Long job titles wrap here. */
+  font-size: var(--fs-micro);
   font-weight: 500;
+  line-height: 1.45;
   letter-spacing: 0.01em;
   color: var(--c-ink-soft);
+  text-wrap: pretty;
 }
 
 

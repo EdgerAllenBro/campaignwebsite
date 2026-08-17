@@ -620,25 +620,47 @@
         </div>
 
         <!-- ============================================================
-             ENDORSEMENT
+             ENDORSEMENTS
              ------------------------------------------------------------
-             Quote and attribution exactly as supplied. Do not add context
-             about the endorser's role or relationship unless it has been
-             confirmed. Additional endorsements can be added as further
-             <figure class="endorsement"> blocks.
+             Quotes and attributions exactly as supplied. Do not add context
+             about an endorser's role or relationship beyond what they gave.
+             Add further entries as additional <figure class="endorsement">
+             blocks; the grid reflows on its own.
+
+             The label above them matters: it frames the second quote as
+             affectionate rather than as a complaint.
              ============================================================ -->
-        <figure class="endorsement" data-reveal>
-          <blockquote class="endorsement__quote">
-            <p>
-              &ldquo;When I need something done, I trust Roman to do it and do it right the
-              first time.&rdquo;
-            </p>
-          </blockquote>
-          <figcaption class="endorsement__source">
-            <span class="endorsement__name">LTC Phil Kost,</span>
-            <span class="endorsement__detail">USA (Ret.)</span>
-          </figcaption>
-        </figure>
+        <section class="endorsements" aria-labelledby="endorsements-label" data-reveal>
+          <p class="endorsements__label" id="endorsements-label">From people who have worked with him</p>
+
+          <div class="endorsements__grid">
+            <figure class="endorsement">
+              <blockquote class="endorsement__quote">
+                <p>
+                  &ldquo;When I need something done, I trust Roman to do it and do it right the
+                  first time.&rdquo;
+                </p>
+              </blockquote>
+              <figcaption class="endorsement__source">
+                <span class="endorsement__name">LTC Phil Kost,</span>
+                <span class="endorsement__detail">USA (Ret.)</span>
+              </figcaption>
+            </figure>
+
+            <figure class="endorsement">
+              <blockquote class="endorsement__quote">
+                <p>&ldquo;Oh no, what did he volunteer to do this time?&rdquo;</p>
+              </blockquote>
+              <figcaption class="endorsement__source">
+                <span class="endorsement__name">Brandon Lunsford,</span>
+                <span class="endorsement__detail">
+                  Operations and Field Support Manager for Marketing and Strategic Communication,
+                  Civil Air Patrol
+                </span>
+              </figcaption>
+            </figure>
+          </div>
+        </section>
       </div>
     </section>
 
