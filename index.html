@@ -27,8 +27,8 @@
   <meta name="twitter:description" content="Building the infrastructure and visibility APSEA deserves. Contract negotiations start January 1.">
   <meta name="twitter:image" content="https://example.com/og-image.png">
 
-  <!-- Favicon: inline SVG monogram, no extra file required -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230f1e33'/%3E%3Cpath d='M8 52V12h6v34h10v6H8Zm26 0-8-40h6.4l5.6 29.4L43.6 12H50l-8 40h-8Z' fill='%23f7f5f1'/%3E%3Crect x='8' y='54' width='42' height='3' fill='%23b8352d'/%3E%3C/svg%3E">
+  <!-- Favicon: inline SVG rule-stack mark, no extra file required -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230f1e33'/%3E%3Crect x='14' y='19' width='36' height='6' rx='3' fill='%23f7f5f1'/%3E%3Crect x='14' y='30' width='22' height='6' rx='3' fill='%2393aecb'/%3E%3Crect x='14' y='41' width='30' height='6' rx='3' fill='%23b8352d'/%3E%3C/svg%3E">
 
   <!-- Typography: Archivo (display) + Public Sans (text), with full system fallbacks -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,7 +56,6 @@
   <header class="site-header" data-site-header>
     <div class="container site-header__inner">
       <a class="brand" href="#top">
-        <span class="brand__mark" aria-hidden="true">RV</span>
         <span class="brand__text">
           <span class="brand__name">Roman Vitanza</span>
           <span class="brand__role">for APSEA Vice President</span>
@@ -118,6 +117,7 @@
           <div class="hero__actions">
             <a class="btn btn--accent" href="#priorities">See My Priorities</a>
             <a class="btn btn--ghost" href="#why-im-running">Why I&rsquo;m Running</a>
+            <a class="btn btn--ghost" href="visibility.html">APSEA Website</a>
           </div>
 
           <ul class="hero__facts" role="list">
@@ -382,6 +382,9 @@
                 the work they rely on, and a presence in the wider labor and aviation community so
                 APSEA is recognized as organized and serious, not overlooked.
               </p>
+              <p class="priority__copy">
+                <a class="inline-link" href="visibility.html">Why APSEA needs a digital footprint &mdash; the full case</a>
+              </p>
 
               <div class="audiences">
                 <h4 class="audiences__title">Three audiences</h4>
@@ -413,7 +416,7 @@
     <section class="section surface--navy matters" id="why-this-matters" aria-labelledby="matters-heading">
       <div class="blueprint" aria-hidden="true"></div>
       <div class="container matters__inner">
-        <header class="section__head section__head--onDark" data-reveal>
+        <header class="section__head" data-reveal>
           <p class="eyebrow eyebrow--onDark">The argument</p>
           <h2 class="section__title" id="matters-heading">Why this matters</h2>
         </header>
@@ -493,35 +496,61 @@
             </p>
 
             <!-- ============================================================
-                 CANDIDATE BIOGRAPHY — ADD YOUR CONTENT HERE
+                 CANDIDATE BIOGRAPHY
                  ------------------------------------------------------------
-                 This block is intentionally left as a placeholder. Add
-                 background, years of service, roles held, or personal
-                 details here. Use <p class="bio__copy"> for each paragraph
-                 so the styling matches the rest of the section.
-
-                 When you add content, delete the <p class="bio__placeholder">
-                 line below.
+                 Ordered for this campaign rather than as a general-purpose
+                 résumé: the contract and communications work leads, because
+                 that is what the office is being sought to do. Every claim is
+                 as supplied — no titles, dates, or scope have been added.
                  ============================================================ -->
             <div class="bio" aria-labelledby="bio-heading">
-              <h3 class="bio__title" id="bio-heading">More about Roman</h3>
-              <p class="bio__placeholder">
-                Biography to come. This space is reserved for background, service history, and
-                anything else worth knowing before you vote.
+              <h3 class="bio__title" id="bio-heading">About Roman</h3>
+
+              <p class="bio__copy">
+                Roman A. Vitanza administers labor agreements for the Allied Pilots Association and
+                supports large-scale airline operations at American Airlines. His professional
+                background spans aviation operations, labor relations, contract administration, and
+                organizational compliance.
               </p>
-              <!-- Example, once you're ready:
-              <p class="bio__copy">Roman has ... </p>
-              <p class="bio__copy">Outside of work, ... </p>
-              -->
+              <p class="bio__copy">
+                He is also a senior leader in Civil Air Patrol, the U.S. Air Force Auxiliary, where
+                he directs communications strategy, brand management, and media relations alongside
+                emergency services missions, incident management, and operational planning. That
+                work covers incident command, aviation operations, sUAS programs, and crisis
+                communications &mdash; getting accurate, timely information out while an operation
+                is still running.
+              </p>
+              <p class="bio__copy">
+                He leads public affairs for Civil Air Patrol&rsquo;s partnership with NASA,
+                supporting nationwide citizen science initiatives involving thousands of volunteers
+                across nearly every U.S. state and territory. Civil Air Patrol named him its
+                National Public Affairs Officer of the Year.
+              </p>
+              <p class="bio__copy">
+                The infrastructure this campaign is about &mdash; a maintained contact list, a
+                channel members recognize, a cadence that holds under pressure &mdash; is the same
+                work he already does, at larger scale and on shorter notice.
+              </p>
+              <p class="bio__copy">
+                Outside that work he serves with the Scottish Rite, Shriners International, and
+                Dolly Parton&rsquo;s Imagination Library.
+              </p>
             </div>
           </div>
+
+          <!-- Right-hand column: portrait, then the link out to the
+               visibility page. -->
+          <div class="running__aside">
 
           <!-- ============================================================
                CANDIDATE PHOTOS — ROTATING PORTRAIT
                ------------------------------------------------------------
-               Add image paths to data-photos as a comma-separated list, e.g.
+               Currently showing one photo: images/headshot.webp
 
-                 data-photos="photos/roman-1.jpg, photos/roman-2.jpg"
+               To rotate between several, append more paths to data-photos
+               as a comma-separated list, e.g.
+
+                 data-photos="images/headshot.webp, images/roman-2.jpg"
 
                Optionally add matching alt text, in the same order, via
                data-photo-alt (pipe-separated), e.g.
@@ -540,22 +569,109 @@
                ============================================================ -->
           <figure class="portrait" data-reveal
                   data-portrait
-                  data-photos=""
-                  data-photo-alt=""
+                  data-photos="images/headshot.webp"
+                  data-photo-alt="Roman Vitanza, candidate for APSEA Vice President"
                   data-interval="5000">
             <div class="portrait__frame">
               <div class="portrait__monogram" data-portrait-monogram aria-hidden="true">
-                <span class="portrait__initials">RV</span>
+                <span class="portrait__name">Roman Vitanza</span>
                 <span class="portrait__rule"></span>
                 <span class="portrait__forOffice">APSEA Vice President</span>
               </div>
-              <div class="portrait__stage" data-portrait-stage></div>
+              <div class="portrait__stage" data-portrait-stage>
+                <!-- First photo ships as real markup so it still appears with
+                     JavaScript disabled. It sits above the monogram and covers
+                     it. script.js replaces it once it has verified which files
+                     actually load. -->
+                <img class="portrait__photo is-current"
+                     data-portrait-static
+                     src="images/headshot.webp"
+                     alt="Roman Vitanza, candidate for APSEA Vice President"
+                     width="720" height="720"
+                     decoding="async">
+              </div>
             </div>
             <figcaption class="portrait__caption">
               Roman Vitanza &mdash; candidate for Vice President, Allied Pilots Staff Employees Association.
             </figcaption>
           </figure>
+
+            <!-- Only the title is the link, so its accessible name stays
+                 short; the ::after on .linkcard__link makes the whole box
+                 clickable. -->
+            <div class="linkcard" data-reveal>
+              <span class="linkcard__eyebrow">Read next</span>
+              <p class="linkcard__title">
+                <a class="linkcard__link" href="visibility.html">Why APSEA needs a digital footprint</a>
+              </p>
+              <p class="linkcard__note">
+                Search for APSEA and you find APA. What that absence costs the association &mdash;
+                and what fixing it actually takes.
+              </p>
+              <span class="linkcard__cue" aria-hidden="true">
+                Read the full case
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                  <path d="M5 12h13M12.5 5.5 19 12l-6.5 6.5"/>
+                </svg>
+              </span>
+            </div>
+
+          </div>
         </div>
+
+        <!-- ============================================================
+             ENDORSEMENTS
+             ------------------------------------------------------------
+             Quotes and attributions exactly as supplied. Do not add context
+             about an endorser's role or relationship beyond what they gave.
+             Add further entries as additional <figure class="endorsement">
+             blocks; the grid reflows on its own.
+
+             The label above them matters: it frames the second quote as
+             affectionate rather than as a complaint.
+             ============================================================ -->
+        <section class="endorsements" aria-labelledby="endorsements-label" data-reveal>
+          <p class="endorsements__label" id="endorsements-label">From people who have worked with him</p>
+
+          <div class="endorsements__grid">
+            <figure class="endorsement">
+              <blockquote class="endorsement__quote">
+                <p>
+                  &ldquo;When I need something done, I trust Roman to do it and do it right the
+                  first time.&rdquo;
+                </p>
+              </blockquote>
+              <figcaption class="endorsement__source">
+                <span class="endorsement__name">LTC Phil Kost,</span>
+                <span class="endorsement__detail">USA (Ret.)</span>
+              </figcaption>
+            </figure>
+
+            <figure class="endorsement">
+              <blockquote class="endorsement__quote">
+                <p>&ldquo;Building this Union like the Romans built empires.&rdquo;</p>
+              </blockquote>
+              <figcaption class="endorsement__source">
+                <span class="endorsement__name">Luke Kakert,</span>
+                <span class="endorsement__detail">
+                  Civil Air Patrol&rsquo;s Texas Wing Deputy Director of Emergency Services Training
+                </span>
+              </figcaption>
+            </figure>
+
+            <figure class="endorsement">
+              <blockquote class="endorsement__quote">
+                <p>&ldquo;Oh no, what did he volunteer to do this time?&rdquo;</p>
+              </blockquote>
+              <figcaption class="endorsement__source">
+                <span class="endorsement__name">Brandon Lunsford,</span>
+                <span class="endorsement__detail">
+                  Coordinator for Youth on Guard Memorial Foundation
+                </span>
+              </figcaption>
+            </figure>
+          </div>
+        </section>
       </div>
     </section>
 
@@ -569,28 +685,87 @@
           <h2 class="section__title" id="expect-heading">What you should be able to expect from your Vice President</h2>
         </header>
 
-        <ul class="expect__grid" role="list" data-reveal-group>
+        <!-- ============================================================
+             The office as the bylaws actually define it. Every quotation
+             and article reference below is from the APSEA Constitution and
+             Bylaws — keep it verbatim, and keep the distinction between
+             what the document requires and what the campaign promises.
+             ============================================================ -->
+        <div class="office" data-reveal>
+          <p class="office__label">The office, as the bylaws define it</p>
+          <blockquote class="office__quote">
+            <p>
+              &ldquo;The Vice President shall assume the authority and responsibility of the
+              President in the absence or incapacitation of the latter. She/he shall also preside
+              when called upon by the President&hellip; He shall assist the President in the
+              discharge of all duties.&rdquo;
+            </p>
+            <cite class="office__cite">APSEA Constitution and Bylaws, Article VII</cite>
+          </blockquote>
+          <p class="office__copy">
+            That is the whole of the job description. The bylaws set what the office must do; they
+            do not say how well. The four commitments below are mine &mdash; but each one answers
+            something the governing document actually requires.
+          </p>
+        </div>
+
+        <ul class="expect__grid expect__grid--grounded" role="list" data-reveal-group>
           <li class="expect__card" data-reveal>
             <span class="expect__index" aria-hidden="true">01</span>
             <h3 class="expect__title">Preparation</h3>
             <p class="expect__copy">Infrastructure should be ready before it is urgently needed.</p>
+            <p class="expect__basis">
+              <span class="expect__basisLabel">Why the office requires it</span>
+              The Vice President has to be able to assume the President&rsquo;s authority
+              &ldquo;in the absence or incapacitation of the latter&rdquo; &mdash; without notice.
+              And the bylaws already front-load the bargaining timeline: the negotiating committee
+              must be elected at a meeting held at least 90 days before the agreement expires
+              <span class="expect__ref">(Art. VII; Art. VIII.A)</span>.
+            </p>
           </li>
           <li class="expect__card" data-reveal>
             <span class="expect__index" aria-hidden="true">02</span>
             <h3 class="expect__title">Clarity</h3>
             <p class="expect__copy">Members deserve plain-language explanations of complicated issues.</p>
+            <p class="expect__basis">
+              <span class="expect__basisLabel">Why the office requires it</span>
+              No agreement with APA takes effect until it is ratified by a
+              <strong>two-thirds majority of the membership in good standing</strong>. That bar
+              cannot be cleared by members who are guessing at what they are voting on &mdash; and
+              the Vice President is one of the three officers who then sign it
+              <span class="expect__ref">(Art. VIII.B)</span>.
+            </p>
           </li>
           <li class="expect__card" data-reveal>
             <span class="expect__index" aria-hidden="true">03</span>
             <h3 class="expect__title">Consistency</h3>
             <p class="expect__copy">Communication should happen on a predictable schedule.</p>
+            <p class="expect__basis">
+              <span class="expect__basisLabel">Why the office requires it</span>
+              The bylaws require a minimum of two membership meetings a year, one in the second
+              quarter and one in the fourth. That is a governance floor, not a communications plan
+              &mdash; and in a bargaining year it is nowhere near enough on its own
+              <span class="expect__ref">(Art. VI.A)</span>.
+            </p>
           </li>
           <li class="expect__card" data-reveal>
             <span class="expect__index" aria-hidden="true">04</span>
             <h3 class="expect__title">Access</h3>
             <p class="expect__copy">Members should know where to ask questions and where reliable information comes from.</p>
+            <p class="expect__basis">
+              <span class="expect__basisLabel">Why the office requires it</span>
+              Members elect the negotiating committee from the floor, and any officer can be
+              recalled on a petition of one-third of members and a two-thirds vote. Both are real
+              powers, and both depend on members knowing who to reach
+              <span class="expect__ref">(Art. VIII.A; Art. VII.D)</span>.
+            </p>
           </li>
         </ul>
+
+        <p class="office__foot" data-reveal>
+          Accountability members cannot find is accountability that does not function. Every
+          commitment above exists to make the powers the bylaws already grant you usable.
+        </p>
       </div>
     </section>
 
@@ -717,7 +892,6 @@
     <div class="container site-footer__inner">
 
       <div class="site-footer__brand">
-        <span class="brand__mark brand__mark--footer" aria-hidden="true">RV</span>
         <p class="site-footer__name">Roman Vitanza<br><span>for APSEA Vice President</span></p>
       </div>
 
@@ -727,8 +901,9 @@
           <!-- REPLACE with the real campaign address -->
           <li><a href="mailto:campaign@example.com">Email</a></li>
           <li><a href="#contact-form">Campaign Updates</a></li>
-          <!-- REPLACE href with the APSEA website once available -->
-          <li><a href="https://example.com" rel="noopener">APSEA</a></li>
+          <!-- Points at visibility.html until APSEA has a site of its own,
+               at which point this should become that address. -->
+          <li><a href="visibility.html">APSEA Website</a></li>
         </ul>
       </nav>
 
