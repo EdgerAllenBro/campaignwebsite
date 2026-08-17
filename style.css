@@ -1357,9 +1357,14 @@ textarea {
 }
 
 /* --- Portrait ---------------------------------------------------------- */
-.portrait {
+/* The whole right-hand column travels together, so sticky lives here
+   rather than on the portrait itself. */
+.running__aside {
   position: sticky;
   top: calc(var(--header-h) + 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
 }
 
 .portrait__frame {
@@ -1521,6 +1526,109 @@ textarea {
   font-size: var(--fs-micro);
   line-height: 1.5;
   color: var(--c-ink-soft);
+}
+
+
+/* --- Link card: points out to the visibility page ---------------------- */
+.linkcard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: var(--space-md);
+  border: 1px solid var(--c-navy-700);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, var(--c-navy-800), var(--c-navy-950));
+  box-shadow: var(--shadow-md);
+  transition: transform var(--dur) var(--ease),
+              box-shadow var(--dur) var(--ease),
+              border-color var(--dur) var(--ease);
+}
+
+.linkcard::before {
+  content: "";
+  position: absolute;
+  inset: -1px -1px auto -1px;
+  height: 3px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  background: var(--c-accent-strong);
+}
+
+.linkcard:hover {
+  transform: translateY(-3px);
+  border-color: var(--c-steel-500);
+  box-shadow: var(--shadow-lg);
+}
+
+.linkcard__eyebrow {
+  font-family: var(--font-display);
+  font-size: var(--fs-eyebrow);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c-accent-on-dark);
+}
+
+.linkcard__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-h4);
+  font-weight: 700;
+  letter-spacing: -0.014em;
+  line-height: 1.25;
+  color: #fff;
+}
+
+.linkcard__link {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Stretches the title link across the whole card so the box is clickable
+   while the link's accessible name stays just the title. */
+.linkcard__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+}
+
+.linkcard__note {
+  margin: 0;
+  font-size: var(--fs-small);
+  line-height: 1.55;
+  color: var(--c-steel-300);
+}
+
+.linkcard__cue {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.35rem;
+  font-family: var(--font-display);
+  font-size: var(--fs-micro);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--c-accent-on-dark);
+}
+.linkcard__cue svg {
+  width: 0.95rem;
+  height: 0.95rem;
+  transition: transform var(--dur) var(--ease);
+}
+.linkcard:hover .linkcard__cue svg { transform: translateX(3px); }
+
+/* The stretched link would otherwise ring only its own text. */
+.linkcard:has(.linkcard__link:focus-visible) {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+.linkcard .linkcard__link:focus-visible { outline: none; }
+@supports not selector(:has(*)) {
+  .linkcard .linkcard__link:focus-visible {
+    outline: 3px solid var(--focus-ring);
+    outline-offset: 3px;
+  }
 }
 
 
@@ -2069,6 +2177,40 @@ textarea {
   color: var(--c-ink-soft);
 }
 
+/* --- Fact box: sourced statements of record ---------------------------- */
+.factbox {
+  margin-top: var(--space-2xl);
+  padding: clamp(1.4rem, 1rem + 1.4vw, 2.25rem);
+  border: 1px solid var(--c-paper-line);
+  border-left: 4px solid var(--c-steel-500);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.factbox__title {
+  margin: 0 0 var(--space-md);
+  font-size: var(--fs-h3);
+  font-weight: 800;
+  letter-spacing: -0.024em;
+  color: var(--c-ink);
+}
+
+.factbox__copy {
+  max-width: 68ch;
+  margin: 0 0 var(--space-sm);
+  color: var(--c-ink-soft);
+}
+
+.factbox__source {
+  margin: var(--space-md) 0 0;
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--c-paper-line);
+  font-size: var(--fs-micro);
+  letter-spacing: 0.02em;
+  color: var(--c-ink-soft);
+}
+
 /* --- Wide variants of shared blocks ------------------------------------ */
 .takeaway--wide { margin-top: var(--space-2xl); }
 .bio--wide { margin-top: var(--space-2xl); }
@@ -2139,9 +2281,9 @@ textarea {
 
   .deadline { max-width: 30rem; }
 
-  .portrait {
+  .running__aside {
     position: static;
-    max-width: 24rem;
+    max-width: 30rem;
   }
 
   .gap__grid { grid-template-columns: minmax(0, 1fr); }
