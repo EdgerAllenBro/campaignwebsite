@@ -27,8 +27,8 @@
   <meta name="twitter:description" content="Search for APSEA and you find APA. The association that represents the people who make APA run has no public presence at all.">
   <meta name="twitter:image" content="https://example.com/og-image.png">
 
-  <!-- Favicon: inline SVG monogram, no extra file required -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230f1e33'/%3E%3Cpath d='M8 52V12h6v34h10v6H8Zm26 0-8-40h6.4l5.6 29.4L43.6 12H50l-8 40h-8Z' fill='%23f7f5f1'/%3E%3Crect x='8' y='54' width='42' height='3' fill='%23b8352d'/%3E%3C/svg%3E">
+  <!-- Favicon: inline SVG rule-stack mark, no extra file required -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230f1e33'/%3E%3Crect x='14' y='19' width='36' height='6' rx='3' fill='%23f7f5f1'/%3E%3Crect x='14' y='30' width='22' height='6' rx='3' fill='%2393aecb'/%3E%3Crect x='14' y='41' width='30' height='6' rx='3' fill='%23b8352d'/%3E%3C/svg%3E">
 
   <!-- Typography: Archivo (display) + Public Sans (text), with full system fallbacks -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,7 +57,6 @@
   <header class="site-header" data-site-header>
     <div class="container site-header__inner">
       <a class="brand" href="index.html">
-        <span class="brand__mark" aria-hidden="true">RV</span>
         <span class="brand__text">
           <span class="brand__name">Roman Vitanza</span>
           <span class="brand__role">for APSEA Vice President</span>
@@ -115,6 +114,7 @@
           <h1 class="hero__heading" id="page-heading">
             Search for APSEA.
             <span>You&rsquo;ll find APA.</span>
+            <span class="hero__coda">And a Twitter account that fizzled out before it could flare.</span>
           </h1>
 
           <p class="hero__lede">
@@ -169,7 +169,14 @@
               <li class="serp__result serp__result--missing">
                 <p class="serp__title">Allied Pilots Staff Employees Association</p>
                 <p class="serp__url">&mdash;</p>
-                <p class="serp__snippet">No website. No listing. Nothing to link to.</p>
+                <p class="serp__snippet">No website. No listing. Nothing current to link to.</p>
+              </li>
+              <li class="serp__result serp__result--stale">
+                <p class="serp__title">APSEA &mdash; social account</p>
+                <p class="serp__url">Dormant</p>
+                <p class="serp__snippet">
+                  Started, then went quiet. An abandoned account is its own kind of answer.
+                </p>
               </li>
             </ol>
             <figcaption class="serp__caption">
@@ -457,7 +464,6 @@
     <div class="container site-footer__inner">
 
       <div class="site-footer__brand">
-        <span class="brand__mark brand__mark--footer" aria-hidden="true">RV</span>
         <p class="site-footer__name">Roman Vitanza<br><span>for APSEA Vice President</span></p>
       </div>
 

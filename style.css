@@ -550,30 +550,14 @@ textarea {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.7rem;
   flex: 0 1 auto;
   min-width: 0;
+  /* Without the old mark this collapsed to the height of one line of text.
+     The wordmark is the header's home link, so it keeps a real tap target. */
+  min-height: 2.75rem;
   text-decoration: none;
   color: inherit;
 }
-
-.brand__mark {
-  display: grid;
-  place-items: center;
-  flex: 0 0 auto;
-  width: 2.4rem;
-  height: 2.4rem;
-  border: 1.5px solid var(--c-accent-on-dark);
-  border-radius: var(--radius);
-  font-family: var(--font-display);
-  font-size: 0.82rem;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  color: var(--c-paper);
-  background: rgba(184, 53, 45, 0.18);
-  transition: background-color var(--dur) var(--ease);
-}
-.brand:hover .brand__mark { background: rgba(184, 53, 45, 0.34); }
 
 .brand__text {
   display: flex;
@@ -1413,13 +1397,14 @@ textarea {
   text-align: center;
 }
 
-.portrait__initials {
+.portrait__name {
   font-family: var(--font-display);
-  font-size: clamp(3.5rem, 2rem + 7vw, 6rem);
+  font-size: clamp(1.5rem, 1.1rem + 1.9vw, 2.3rem);
   font-weight: 800;
-  letter-spacing: 0.02em;
-  line-height: 1;
+  letter-spacing: -0.018em;
+  line-height: 1.15;
   color: var(--c-paper);
+  text-wrap: balance;
 }
 
 .portrait__rule {
@@ -2031,12 +2016,6 @@ textarea {
   gap: 0.8rem;
 }
 
-.brand__mark--footer {
-  width: 3rem;
-  height: 3rem;
-  font-size: 1rem;
-}
-
 .site-footer__name {
   margin: 0;
   font-family: var(--font-display);
@@ -2123,6 +2102,20 @@ textarea {
 .hero--page .hero__inner { grid-template-columns: minmax(0, 1fr); }
 .hero--page .hero__content { max-width: 46rem; }
 .hero--page .hero__heading { font-size: clamp(2.1rem, 1.5rem + 2.6vw, 3.9rem); }
+
+/* Third headline line: the wry kicker, stepped down so the two hammer
+   blows above it keep their weight. Sized independently of the h1 so it
+   stays readable when the heading shrinks on small screens. */
+.hero__heading .hero__coda {   /* outranks .hero__heading span's accent colour */
+  display: block;
+  max-width: 30ch;
+  margin-top: 0.75rem;
+  font-size: clamp(1.02rem, 0.88rem + 0.72vw, 1.5rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.32;
+  color: var(--c-steel-200);
+}
 
 /* --- Breadcrumb -------------------------------------------------------- */
 .crumb { margin-bottom: var(--space-lg); }
@@ -2231,6 +2224,19 @@ textarea {
 .serp__result--missing .serp__title { color: var(--c-accent); }
 .serp__result--missing .serp__url,
 .serp__result--missing .serp__snippet { color: var(--c-accent); opacity: 0.85; }
+
+/* Present in the results, but plainly inactive. */
+.serp__result--stale {
+  border-left: 3px dashed var(--c-steel-300);
+  background: var(--c-paper);
+}
+.serp__result--stale .serp__title { color: var(--c-ink-soft); }
+.serp__result--stale .serp__url {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  color: var(--c-steel-500);
+}
+.serp__result--stale .serp__snippet { color: var(--c-ink-soft); }
 
 .serp__caption {
   padding: var(--space-sm) var(--space-md);
