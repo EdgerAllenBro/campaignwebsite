@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f1e33">
+
+  <!-- ============================================================
+       SEO
+       REPLACE the canonical + og:url + og:image values below with the
+       real deployed domain before launch.
+       ============================================================ -->
+  <title>Why APSEA needs a digital footprint | Roman Vitanza for APSEA Vice President</title>
+  <meta name="description" content="Search for APSEA and you find APA. The Allied Pilots Staff Employees Association has no public-facing website — no page saying who it represents, what it does, or how to reach it. Here is what that absence costs, and what fixing it looks like.">
+  <link rel="canonical" href="https://example.com/visibility.html">
+
+  <!-- Open Graph / social preview placeholders -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Roman Vitanza for APSEA Vice President">
+  <meta property="og:title" content="Why APSEA needs a digital footprint">
+  <meta property="og:description" content="Search for APSEA and you find APA. The association that represents the people who make APA run has no public presence at all.">
+  <meta property="og:url" content="https://example.com/visibility.html">
+  <meta property="og:image" content="https://example.com/og-image.png">
+  <meta property="og:image:alt" content="Why APSEA needs a digital footprint — Roman Vitanza for APSEA Vice President.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Why APSEA needs a digital footprint">
+  <meta name="twitter:description" content="Search for APSEA and you find APA. The association that represents the people who make APA run has no public presence at all.">
+  <meta name="twitter:image" content="https://example.com/og-image.png">
+
+  <!-- Favicon: inline SVG monogram, no extra file required -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230f1e33'/%3E%3Cpath d='M8 52V12h6v34h10v6H8Zm26 0-8-40h6.4l5.6 29.4L43.6 12H50l-8 40h-8Z' fill='%23f7f5f1'/%3E%3Crect x='8' y='54' width='42' height='3' fill='%23b8352d'/%3E%3C/svg%3E">
+
+  <!-- Typography: Archivo (display) + Public Sans (text), with full system fallbacks -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Marks that JS is available so reveal animations never hide content
+       for no-JS visitors. Kept inline and tiny to avoid a flash. -->
+  <script>document.documentElement.classList.add('js');</script>
+
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="scroll-progress" aria-hidden="true"><span class="scroll-progress__bar" data-scroll-progress></span></div>
+
+  <!-- ============================================================
+       HEADER / NAVIGATION
+       Links point back to the campaign home page since this is a
+       separate document.
+       ============================================================ -->
+  <header class="site-header" data-site-header>
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__mark" aria-hidden="true">RV</span>
+        <span class="brand__text">
+          <span class="brand__name">Roman Vitanza</span>
+          <span class="brand__role">for APSEA Vice President</span>
+        </span>
+      </a>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        data-nav-toggle
+        aria-expanded="false"
+        aria-controls="primary-nav"
+        aria-label="Open navigation menu">
+        <span class="nav-toggle__box" aria-hidden="true">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </span>
+        <span class="nav-toggle__label" data-nav-toggle-label>Menu</span>
+      </button>
+
+      <nav class="primary-nav" id="primary-nav" data-primary-nav aria-label="Primary">
+        <ul class="primary-nav__list" role="list">
+          <li><a class="primary-nav__link" href="index.html#priorities">Priorities</a></li>
+          <li><a class="primary-nav__link" href="index.html#why-im-running">Why I'm Running</a></li>
+          <li><a class="primary-nav__link" href="index.html#about">About</a></li>
+          <li><a class="primary-nav__link" href="index.html#contact">Contact</a></li>
+        </ul>
+        <a class="btn btn--accent btn--sm primary-nav__cta" href="index.html#contact-form">Support the Campaign</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="nav-scrim" data-nav-scrim hidden></div>
+
+  <main id="main">
+
+    <!-- ============================================================
+         MASTHEAD
+         ============================================================ -->
+    <section class="hero hero--page surface--navy" id="top" aria-labelledby="page-heading">
+      <div class="blueprint" aria-hidden="true"></div>
+
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <nav class="crumb" aria-label="Breadcrumb">
+            <ol class="crumb__list" role="list">
+              <li><a href="index.html">Campaign home</a></li>
+              <li aria-current="page">Why APSEA needs a digital footprint</li>
+            </ol>
+          </nav>
+
+          <p class="eyebrow eyebrow--onDark">The visibility gap</p>
+
+          <h1 class="hero__heading" id="page-heading">
+            Search for APSEA.
+            <span>You&rsquo;ll find APA.</span>
+          </h1>
+
+          <p class="hero__lede">
+            The Allied Pilots Staff Employees Association represents the people who make APA run.
+            It has no public-facing website &mdash; no page that says who it represents, what it
+            does, or how to reach it. You are reading a campaign page because the association page
+            it should link to does not exist.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--accent" href="#what-it-costs">What the absence costs</a>
+            <a class="btn btn--ghost" href="index.html#priorities">See the campaign priorities</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         WHAT SOMEONE FINDS TODAY
+         ============================================================ -->
+    <section class="section section--paper" id="the-gap" aria-labelledby="gap-heading">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <p class="eyebrow">What&rsquo;s there now</p>
+          <h2 class="section__title" id="gap-heading">Type our name into a search engine and you get somebody else&rsquo;s union.</h2>
+          <p class="section__lede">
+            Not a competitor. Not a mistake. Just the larger, more visible organization that shares
+            most of our acronym &mdash; and the one we work alongside every day.
+          </p>
+        </header>
+
+        <div class="gap__grid">
+          <!-- Schematic illustration, deliberately unbranded: this is a
+               diagram of an outcome, not a copy of any search product. -->
+          <figure class="serp" data-reveal>
+            <div class="serp__bar">
+              <span class="serp__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" focusable="false">
+                  <circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 4 4"/>
+                </svg>
+              </span>
+              <span class="serp__query">APSEA</span>
+            </div>
+
+            <ol class="serp__results" role="list">
+              <li class="serp__result">
+                <p class="serp__title">Allied Pilots Association</p>
+                <p class="serp__url">alliedpilots.org</p>
+                <p class="serp__snippet">The union representing the pilots of American Airlines.</p>
+              </li>
+              <li class="serp__result serp__result--missing">
+                <p class="serp__title">Allied Pilots Staff Employees Association</p>
+                <p class="serp__url">&mdash;</p>
+                <p class="serp__snippet">No website. No listing. Nothing to link to.</p>
+              </li>
+            </ol>
+            <figcaption class="serp__caption">
+              Illustrative. Not a screenshot of any particular search engine.
+            </figcaption>
+          </figure>
+
+          <div class="gap__copy" data-reveal>
+            <h3 class="gap__title">Who runs into this</h3>
+            <ul class="stack" role="list">
+              <li class="stack__item">
+                <span class="stack__name">A member with a question</span>
+                <span class="stack__note">
+                  No canonical place to check what the contract says, who represents them, or when
+                  they&rsquo;ll hear something next.
+                </span>
+              </li>
+              <li class="stack__item">
+                <span class="stack__name">Someone newly in the unit</span>
+                <span class="stack__note">
+                  Nothing to read that explains what representation means or who to ask. They learn
+                  it secondhand, or they don&rsquo;t.
+                </span>
+              </li>
+              <li class="stack__item">
+                <span class="stack__name">An APA pilot</span>
+                <span class="stack__note">
+                  Interacts with APSEA-represented staff constantly, and has no way to find out that
+                  the association exists.
+                </span>
+              </li>
+              <li class="stack__item">
+                <span class="stack__name">Another union, or anyone looking in</span>
+                <span class="stack__note">
+                  A sister local, a reporter, a labor organization sizing us up &mdash; all hit the
+                  same wall.
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="before__pull" data-reveal>
+          An organization that cannot be found is an organization that can be overlooked.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EVERY OTHER UNION HAS ONE
+         ============================================================ -->
+    <section class="section section--alt" id="table-stakes" aria-labelledby="stakes-heading">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <p class="eyebrow">The baseline</p>
+          <h2 class="section__title" id="stakes-heading">A public website is table stakes in organized labor.</h2>
+          <p class="section__lede">
+            Nearly every union of any standing maintains one &mdash; including APA, the union whose
+            operation our members support. It is not a vanity project. It is how an association
+            proves it exists, states what it stands for, and gives people a way in.
+          </p>
+        </header>
+
+        <ul class="expect__grid" role="list" data-reveal-group>
+          <li class="expect__card" data-reveal>
+            <span class="expect__index" aria-hidden="true">01</span>
+            <h3 class="expect__title">Identity</h3>
+            <p class="expect__copy">A name, a purpose, and a plain statement of who the association represents.</p>
+          </li>
+          <li class="expect__card" data-reveal>
+            <span class="expect__index" aria-hidden="true">02</span>
+            <h3 class="expect__title">Reachability</h3>
+            <p class="expect__copy">Officers, contacts, and a route to representation that does not depend on knowing someone.</p>
+          </li>
+          <li class="expect__card" data-reveal>
+            <span class="expect__index" aria-hidden="true">03</span>
+            <h3 class="expect__title">Record</h3>
+            <p class="expect__copy">Governing documents and reference material in one findable, current place.</p>
+          </li>
+          <li class="expect__card" data-reveal>
+            <span class="expect__index" aria-hidden="true">04</span>
+            <h3 class="expect__title">Standing</h3>
+            <p class="expect__copy">Evidence, to anyone who looks, that this is an organized body and not an informality.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         WHAT THE ABSENCE COSTS
+         ============================================================ -->
+    <section class="section surface--navy matters" id="what-it-costs" aria-labelledby="costs-heading">
+      <div class="blueprint" aria-hidden="true"></div>
+      <div class="container matters__inner">
+        <header class="section__head" data-reveal>
+          <p class="eyebrow eyebrow--onDark">The cost</p>
+          <h2 class="section__title" id="costs-heading">What the absence actually costs</h2>
+        </header>
+
+        <div class="matters__grid">
+          <div class="matters__lead" data-reveal>
+            <p class="matters__statement">
+              Invisibility is not a neutral condition. It compounds, and it compounds against us.
+            </p>
+            <p class="matters__copy">
+              An association nobody has heard of has a harder time recruiting engaged members,
+              building leverage at the table, or getting taken seriously by the company. Every one of
+              those follows from the same root: there is nothing to point at.
+            </p>
+            <p class="matters__copy">
+              This is why I treat communications as organizational infrastructure rather than
+              publicity. A website is not the goal. Being findable, credible, and answerable is the
+              goal &mdash; and a website is the cheapest way to get there.
+            </p>
+            <p class="matters__copy">
+              Contract negotiations begin January 1. The association&rsquo;s public standing is part
+              of what it brings to that table.
+            </p>
+          </div>
+
+          <ol class="chain" role="list" data-reveal aria-label="How invisibility compounds">
+            <li class="chain__link">
+              <span class="chain__step" aria-hidden="true">01</span>
+              <h3 class="chain__name">Nothing to find</h3>
+              <p class="chain__note">No page, no listing, no address anyone recognizes.</p>
+            </li>
+            <li class="chain__link">
+              <span class="chain__step" aria-hidden="true">02</span>
+              <h3 class="chain__name">Nothing to join</h3>
+              <p class="chain__note">People who might engage have no obvious way in.</p>
+            </li>
+            <li class="chain__link">
+              <span class="chain__step" aria-hidden="true">03</span>
+              <h3 class="chain__name">Nothing to cite</h3>
+              <p class="chain__note">No public record of what the association says or stands for.</p>
+            </li>
+            <li class="chain__link chain__link--terminal">
+              <span class="chain__step" aria-hidden="true">04</span>
+              <h3 class="chain__name">Nothing to weigh</h3>
+              <p class="chain__note">An organization with no public footprint is easy for the other side to discount.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         WHAT FIXING IT LOOKS LIKE
+         ============================================================ -->
+    <section class="section section--paper" id="the-fix" aria-labelledby="fix-heading">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <p class="eyebrow">The fix</p>
+          <h2 class="section__title" id="fix-heading">It does not need to be elaborate. It needs to exist.</h2>
+          <p class="section__lede">
+            Nobody is asking for a redesign every quarter. A handful of pages, accurate and current,
+            at an address that belongs to the association, does almost all of the work.
+          </p>
+        </header>
+
+        <ol class="foundation" role="list" data-reveal-group>
+          <li class="foundation__item" data-reveal>
+            <span class="foundation__index" aria-hidden="true">01</span>
+            <h3 class="foundation__title">Who we represent</h3>
+            <p class="foundation__copy">
+              One page, in plain terms, naming the work our members do and the unit the association
+              covers.
+            </p>
+          </li>
+          <li class="foundation__item" data-reveal>
+            <span class="foundation__index" aria-hidden="true">02</span>
+            <h3 class="foundation__title">How to reach us</h3>
+            <p class="foundation__copy">
+              Officers, roles, and a contact route that works whether or not you already know who to
+              call.
+            </p>
+          </li>
+          <li class="foundation__item" data-reveal>
+            <span class="foundation__index" aria-hidden="true">03</span>
+            <h3 class="foundation__title">What governs us</h3>
+            <p class="foundation__copy">
+              Bylaws and agreement references kept in one place, so the answer to &ldquo;where does
+              it say that&rdquo; is a link.
+            </p>
+          </li>
+          <li class="foundation__item" data-reveal>
+            <span class="foundation__index" aria-hidden="true">04</span>
+            <h3 class="foundation__title">What&rsquo;s happening</h3>
+            <p class="foundation__copy">
+              Updates on a predictable schedule, at an address members recognize, especially during
+              bargaining.
+            </p>
+          </li>
+        </ol>
+
+        <p class="takeaway takeaway--wide" data-reveal>
+          <span class="takeaway__label">The takeaway</span>
+          <span class="takeaway__text">
+            A union that can&rsquo;t be found is doing its members a disservice it doesn&rsquo;t have to.
+          </span>
+        </p>
+
+        <!-- ============================================================
+             ABOUT APSEA — ADD YOUR CONTENT HERE
+             ------------------------------------------------------------
+             Deliberately left blank rather than filled with guesses. Add
+             the real description of the unit: the departments and roles
+             APSEA covers, roughly how many people, and anything else worth
+             stating plainly. Use <p class="bio__copy"> for each paragraph.
+
+             When you add content, delete the <p class="bio__placeholder">
+             line below.
+             ============================================================ -->
+        <div class="bio bio--wide" aria-labelledby="who-heading" data-reveal>
+          <h3 class="bio__title" id="who-heading">Who APSEA represents</h3>
+          <p class="bio__placeholder">
+            To be written. This is exactly the paragraph the association has nowhere to put, and it
+            is the first thing a real APSEA site should say.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         STOPGAP NOTE + CLOSING CTA
+         ============================================================ -->
+    <section class="section surface--navy closing" id="stopgap" aria-labelledby="stopgap-heading">
+      <div class="blueprint" aria-hidden="true"></div>
+      <div class="container closing__inner closing__inner--single">
+        <div class="closing__pitch" data-reveal>
+          <p class="eyebrow eyebrow--onDark">One caveat</p>
+          <h2 class="closing__heading" id="stopgap-heading">
+            This page is a stopgap, and it should be replaced.
+          </h2>
+          <p class="closing__copy">
+            This is a campaign page. It does not speak for APSEA and it should not be mistaken for
+            an official association publication. It exists because someone clicking
+            &ldquo;APSEA&rdquo; deserved to land somewhere rather than nowhere.
+          </p>
+          <p class="closing__copy">
+            The right outcome is that this page becomes unnecessary &mdash; because the association
+            has its own site, at its own address, maintained as a matter of course. Building that
+            is part of what I&rsquo;m campaigning for, and it is work that should be finished before
+            negotiations open on
+            <span class="countdown-inline">
+              January 1 &mdash;
+              <strong data-countdown-days>&mdash;</strong>
+              <span data-countdown-unit>days</span> from today.
+            </span>
+          </p>
+
+          <div class="closing__actions">
+            <a class="btn btn--accent" href="index.html#priorities">See what I&rsquo;m campaigning on</a>
+            <a class="btn btn--ghost" href="index.html#contact-form">Get in Touch</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+
+      <div class="site-footer__brand">
+        <span class="brand__mark brand__mark--footer" aria-hidden="true">RV</span>
+        <p class="site-footer__name">Roman Vitanza<br><span>for APSEA Vice President</span></p>
+      </div>
+
+      <nav class="site-footer__nav" aria-label="Footer">
+        <h2 class="site-footer__navTitle">Links</h2>
+        <ul class="site-footer__links" role="list">
+          <!-- REPLACE with the real campaign address -->
+          <li><a href="mailto:campaign@example.com">Email</a></li>
+          <li><a href="index.html#contact-form">Campaign Updates</a></li>
+          <li><a href="visibility.html" aria-current="page">APSEA</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-footer__legal">
+        <p>
+          Campaign website for Roman Vitanza for APSEA Vice President. Maintained by the campaign.
+          It is not an official publication of the Allied Pilots Staff Employees Association and
+          does not represent an endorsement by APSEA.
+        </p>
+        <p class="site-footer__meta">
+          <a class="site-footer__top" href="#top">Back to top</a>
+        </p>
+      </div>
+
+    </div>
+  </footer>
+</body>
+</html>

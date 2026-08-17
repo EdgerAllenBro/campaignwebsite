@@ -17,9 +17,10 @@
    13. What to expect
    14. Closing CTA & contact form
    15. Footer
-   16. Reveal-on-scroll animation
-   17. Responsive breakpoints
-   18. Reduced motion, forced colors, print
+   16. Visibility page (visibility.html)
+   17. Reveal-on-scroll animation
+   18. Responsive breakpoints
+   19. Reduced motion, forced colors, print
    ========================================================================== */
 
 
@@ -1896,7 +1897,210 @@ textarea {
 
 
 /* ==========================================================================
-   16. REVEAL-ON-SCROLL
+   16. VISIBILITY PAGE (visibility.html)
+   Only the pieces the campaign home page did not already need. Everything
+   else on that page reuses the components above.
+   ========================================================================== */
+
+/* Single-column masthead variant of the hero */
+.hero--page { padding-block: clamp(2.5rem, 1.5rem + 5vw, 5.5rem) var(--space-2xl); }
+
+.hero--page .hero__inner { grid-template-columns: minmax(0, 1fr); }
+.hero--page .hero__content { max-width: 46rem; }
+.hero--page .hero__heading { font-size: clamp(2.1rem, 1.5rem + 2.6vw, 3.9rem); }
+
+/* --- Breadcrumb -------------------------------------------------------- */
+.crumb { margin-bottom: var(--space-lg); }
+
+.crumb__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--fs-micro);
+  color: var(--c-steel-300);
+}
+
+.crumb__list li { display: flex; align-items: center; gap: 0.5rem; }
+
+/* Separator between crumbs */
+.crumb__list li + li::before {
+  content: "";
+  width: 0.35rem;
+  height: 0.35rem;
+  border-top: 1.5px solid var(--c-steel-400);
+  border-right: 1.5px solid var(--c-steel-400);
+  transform: rotate(45deg);
+}
+
+.crumb__list a {
+  display: inline-block;
+  padding: 0.3rem 0;
+  color: var(--c-steel-200);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+.crumb__list a:hover { color: #fff; border-bottom-color: var(--c-accent-on-dark); }
+
+.crumb__list [aria-current="page"] { color: var(--c-steel-300); }
+
+/* --- Search-result illustration ---------------------------------------
+   Deliberately unbranded: a diagram of an outcome, not an imitation of
+   any real search product.
+   ---------------------------------------------------------------------- */
+.serp {
+  border: 1px solid var(--c-paper-line);
+  border-radius: var(--radius-lg);
+  background: #fff;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.serp__bar {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--c-paper-line);
+  background: var(--c-paper);
+}
+
+.serp__icon { display: grid; place-items: center; color: var(--c-steel-500); }
+.serp__icon svg { width: 1.05rem; height: 1.05rem; }
+
+.serp__query {
+  font-family: var(--font-display);
+  font-size: var(--fs-small);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--c-ink);
+}
+
+.serp__results { padding: var(--space-xs) 0; }
+
+.serp__result {
+  padding: var(--space-md);
+  border-bottom: 1px solid var(--c-paper-line);
+}
+.serp__result:last-child { border-bottom: 0; }
+
+.serp__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-h4);
+  font-weight: 700;
+  letter-spacing: -0.014em;
+  line-height: 1.25;
+  color: var(--c-steel-600);
+}
+
+.serp__url {
+  margin: 0.2rem 0 0;
+  font-size: var(--fs-micro);
+  color: var(--c-ink-soft);
+}
+
+.serp__snippet {
+  margin: 0.4rem 0 0;
+  font-size: var(--fs-small);
+  line-height: 1.55;
+  color: var(--c-ink-soft);
+}
+
+/* The result that isn't there */
+.serp__result--missing {
+  border-left: 3px solid var(--c-accent);
+  background: var(--c-accent-tint);
+}
+.serp__result--missing .serp__title { color: var(--c-accent); }
+.serp__result--missing .serp__url,
+.serp__result--missing .serp__snippet { color: var(--c-accent); opacity: 0.85; }
+
+.serp__caption {
+  padding: var(--space-sm) var(--space-md);
+  border-top: 1px dashed var(--c-paper-line);
+  background: var(--c-paper);
+  font-size: var(--fs-micro);
+  color: var(--c-ink-soft);
+}
+
+/* --- Gap section layout ------------------------------------------------ */
+.gap__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 1rem + 3.5vw, 3.75rem);
+  align-items: start;
+}
+
+.gap__title {
+  margin-bottom: var(--space-md);
+  font-family: var(--font-display);
+  font-size: var(--fs-eyebrow);
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  color: var(--c-steel-500);
+}
+
+/* --- Stacked labelled list --------------------------------------------- */
+.stack { display: grid; gap: var(--space-md); }
+
+.stack__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding-top: var(--space-sm);
+  border-top: 2px solid var(--c-accent);
+}
+
+.stack__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-h4);
+  font-weight: 700;
+  letter-spacing: -0.014em;
+  line-height: 1.2;
+  color: var(--c-ink);
+}
+
+.stack__note {
+  font-size: var(--fs-small);
+  line-height: 1.6;
+  color: var(--c-ink-soft);
+}
+
+/* --- Wide variants of shared blocks ------------------------------------ */
+.takeaway--wide { margin-top: var(--space-2xl); }
+.bio--wide { margin-top: var(--space-2xl); }
+
+.closing__inner--single { grid-template-columns: minmax(0, 1fr); }
+.closing__inner--single .closing__pitch { max-width: 46rem; }
+
+/* Inline countdown inside running prose */
+.countdown-inline { white-space: normal; }
+.countdown-inline strong {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  color: var(--c-accent-on-dark);
+}
+
+/* --- Inline text link -------------------------------------------------- */
+.inline-link {
+  display: inline-block;
+  padding-block: 0.4rem;      /* clears the 24px minimum target size */
+  color: var(--c-accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color var(--dur) var(--ease);
+}
+.inline-link:hover { color: var(--c-accent-strong); text-decoration-thickness: 2px; }
+
+
+/* ==========================================================================
+   17. REVEAL-ON-SCROLL
    Only applied when JS is available (html.js), so no-JS visitors always
    see every section.
    ========================================================================== */
@@ -1921,7 +2125,7 @@ textarea {
 
 
 /* ==========================================================================
-   17. RESPONSIVE
+   18. RESPONSIVE
    ========================================================================== */
 
 /* --- Tablet / small desktop -------------------------------------------- */
@@ -1939,6 +2143,8 @@ textarea {
     position: static;
     max-width: 24rem;
   }
+
+  .gap__grid { grid-template-columns: minmax(0, 1fr); }
 
   .site-footer__inner {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2056,7 +2262,7 @@ textarea {
 
 
 /* ==========================================================================
-   18. REDUCED MOTION, FORCED COLORS, PRINT
+   19. REDUCED MOTION, FORCED COLORS, PRINT
    ========================================================================== */
 
 @media (prefers-reduced-motion: reduce) {
