@@ -555,14 +555,30 @@
 
     var stage = root.querySelector('[data-portrait-stage]');
     var monogram = root.querySelector('[data-portrait-monogram]');
-    if (!stage || typeof window.Promise !== 'function') return;
+    if (!stage) return;
+
+    // The first photo is server-rendered so it survives a no-JS visit. If
+    // Promises are unavailable we cannot probe, so leave that markup alone.
+    var staticPhoto = stage.querySelector('[data-portrait-static]');
+    if (typeof window.Promise !== 'function') return;
+
+    function dropStaticPhoto() {
+      if (staticPhoto && staticPhoto.parentNode) {
+        staticPhoto.parentNode.removeChild(staticPhoto);
+      }
+      staticPhoto = null;
+    }
 
     var sources = (root.getAttribute('data-photos') || '')
       .split(',')
       .map(function (value) { return value.trim(); })
       .filter(Boolean);
 
-    if (!sources.length) return; // Monogram stays, nothing else to do.
+    if (!sources.length) {
+      // Nothing configured: clear any stray markup so the monogram shows.
+      dropStaticPhoto();
+      return;
+    }
 
     var altTexts = (root.getAttribute('data-photo-alt') || '')
       .split('|')
@@ -586,8 +602,15 @@
         if (source) usable.push({ source: source, alt: altTexts[index] || '' });
       });
 
-      if (!usable.length) return; // Every image failed — keep the monogram.
+      if (!usable.length) {
+        // Every image failed — remove the broken one and keep the monogram.
+        dropStaticPhoto();
+        return;
+      }
 
+      // Rebuild the stage uniformly from the verified list. The re-added
+      // first image is already cached, so this does not refetch or flash.
+      dropStaticPhoto();
       if (monogram) monogram.hidden = true;
 
       var slides = usable.map(function (photo, index) {
@@ -596,8 +619,8 @@
         image.src = photo.source;
         image.alt =
           photo.alt ||
-          'Roman Vitanza, candidate for APSEA Vice President (photo ' +
-            (index + 1) + ' of ' + usable.length + ')';
+          'Roman Vitanza, candidate for APSEA Vice President' +
+            (usable.length > 1 ? ' (photo ' + (index + 1) + ' of ' + usable.length + ')' : '');
         image.decoding = 'async';
         if (index > 0) image.loading = 'lazy';
         if (index === 0) image.classList.add('is-current');

@@ -519,9 +519,12 @@
           <!-- ============================================================
                CANDIDATE PHOTOS — ROTATING PORTRAIT
                ------------------------------------------------------------
-               Add image paths to data-photos as a comma-separated list, e.g.
+               Currently showing one photo: images/headshot.webp
 
-                 data-photos="photos/roman-1.jpg, photos/roman-2.jpg"
+               To rotate between several, append more paths to data-photos
+               as a comma-separated list, e.g.
+
+                 data-photos="images/headshot.webp, images/roman-2.jpg"
 
                Optionally add matching alt text, in the same order, via
                data-photo-alt (pipe-separated), e.g.
@@ -540,8 +543,8 @@
                ============================================================ -->
           <figure class="portrait" data-reveal
                   data-portrait
-                  data-photos=""
-                  data-photo-alt=""
+                  data-photos="images/headshot.webp"
+                  data-photo-alt="Roman Vitanza, candidate for APSEA Vice President"
                   data-interval="5000">
             <div class="portrait__frame">
               <div class="portrait__monogram" data-portrait-monogram aria-hidden="true">
@@ -549,7 +552,18 @@
                 <span class="portrait__rule"></span>
                 <span class="portrait__forOffice">APSEA Vice President</span>
               </div>
-              <div class="portrait__stage" data-portrait-stage></div>
+              <div class="portrait__stage" data-portrait-stage>
+                <!-- First photo ships as real markup so it still appears with
+                     JavaScript disabled. It sits above the monogram and covers
+                     it. script.js replaces it once it has verified which files
+                     actually load. -->
+                <img class="portrait__photo is-current"
+                     data-portrait-static
+                     src="images/headshot.webp"
+                     alt="Roman Vitanza, candidate for APSEA Vice President"
+                     width="720" height="720"
+                     decoding="async">
+              </div>
             </div>
             <figcaption class="portrait__caption">
               Roman Vitanza &mdash; candidate for Vice President, Allied Pilots Staff Employees Association.
