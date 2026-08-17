@@ -1313,9 +1313,10 @@ textarea {
 /* --- Biography placeholder --------------------------------------------- */
 .bio {
   margin-top: var(--space-xl);
-  padding: var(--space-lg);
-  border: 1px dashed var(--c-steel-300);
-  border-radius: var(--radius-lg);
+  padding: clamp(1.35rem, 1rem + 1.2vw, 2rem);
+  border: 1px solid var(--c-paper-line);
+  border-left: 4px solid var(--c-steel-500);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
   background: var(--c-paper-alt);
 }
 
@@ -1329,16 +1330,12 @@ textarea {
   color: var(--c-steel-500);
 }
 
-.bio__placeholder {
-  font-size: var(--fs-small);
-  line-height: 1.6;
-  color: var(--c-ink-soft);
-}
-
 .bio__copy {
   margin-top: var(--space-sm);
+  max-width: 62ch;
   color: var(--c-ink-soft);
 }
+.bio__copy:first-of-type { margin-top: 0; }
 
 /* --- Portrait ---------------------------------------------------------- */
 /* The whole right-hand column travels together, so sticky lives here
