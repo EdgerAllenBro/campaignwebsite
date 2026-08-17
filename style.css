@@ -1642,6 +1642,113 @@ textarea {
   gap: var(--space-md);
 }
 
+/* Cards carrying a bylaws citation need a wider measure, so they settle
+   into 2x2 rather than a cramped four-across. */
+.expect__grid--grounded {
+  grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
+}
+
+/* --- The office, quoted from the governing document -------------------- */
+.office {
+  max-width: 52rem;
+  margin: 0 auto var(--space-2xl);
+  padding: clamp(1.4rem, 1rem + 1.4vw, 2.25rem);
+  border: 1px solid var(--c-paper-line);
+  border-radius: var(--radius-lg);
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+
+.office__label {
+  margin: 0 0 var(--space-md);
+  font-family: var(--font-display);
+  font-size: var(--fs-eyebrow);
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  color: var(--c-steel-500);
+}
+
+.office__quote {
+  padding: 0 0 var(--space-md);
+  border-bottom: 1px solid var(--c-paper-line);
+}
+
+.office__quote p {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 0.95rem + 0.6vw, 1.38rem);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.016em;
+  color: var(--c-ink);
+  text-wrap: balance;
+}
+
+.office__cite {
+  display: block;
+  margin-top: var(--space-sm);
+  font-size: var(--fs-micro);
+  font-style: normal;
+  letter-spacing: 0.04em;
+  color: var(--c-ink-soft);
+}
+
+.office__copy {
+  margin: var(--space-md) 0 0;
+  font-size: var(--fs-small);
+  line-height: 1.6;
+  color: var(--c-ink-soft);
+}
+
+.office__foot {
+  max-width: 46rem;
+  margin: var(--space-2xl) auto 0;
+  padding-top: var(--space-md);
+  border-top: 2px solid var(--c-accent);
+  font-family: var(--font-display);
+  font-size: var(--fs-h4);
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.016em;
+  color: var(--c-ink);
+  text-align: center;
+  text-wrap: balance;
+}
+
+/* --- Bylaws grounding inside an expectation card ----------------------- */
+.expect__basis {
+  margin-top: var(--space-md);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--c-paper-line);
+  font-size: var(--fs-small);
+  line-height: 1.6;
+  color: var(--c-ink-soft);
+}
+
+.expect__basisLabel {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-family: var(--font-display);
+  font-size: var(--fs-eyebrow);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+}
+
+.expect__basis strong {
+  font-weight: 700;
+  color: var(--c-ink);
+}
+
+.expect__ref {
+  white-space: nowrap;
+  font-size: var(--fs-micro);
+  color: var(--c-steel-500);
+}
+
 .expect__card {
   position: relative;
   padding: var(--space-lg);
