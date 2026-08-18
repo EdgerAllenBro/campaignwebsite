@@ -488,11 +488,11 @@
         }
       }
 
+      // Wording is deliberate: January 1 is the date the campaign wants talks
+      // opened, not one the Agreement schedules (it runs to June 30, 2027,
+      // notice due May 2, 2027). Do not reword these to assert an event.
       if (dateElement) {
-        dateElement.textContent =
-          days === 0
-            ? readableDate + ' — negotiations begin'
-            : readableDate + ' — contract negotiations begin';
+        dateElement.textContent = readableDate + ' — the date I want talks open';
       }
 
       // Progress across the year that ends on the target January 1.
@@ -512,12 +512,12 @@
         railElement.setAttribute(
           'aria-label',
           days === 0
-            ? 'Contract negotiations begin today, ' + readableDate + '.'
+            ? 'Today, ' + readableDate + ', is the date this campaign wants talks opened.'
             : days +
                 (days === 1 ? ' day' : ' days') +
                 ' until ' +
                 readableDate +
-                ', when contract negotiations begin.'
+                ', the date this campaign wants talks opened.'
         );
       }
     }
