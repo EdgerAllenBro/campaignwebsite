@@ -51,6 +51,14 @@
   --c-ink-soft: #45566a;
   --c-ink-faint: #6c7c8f;
 
+  /* Chart fills. Validated as a categorical pair against the paper
+     surface: lightness band, chroma floor, CVD separation (ΔE 17.7
+     protan), normal-vision separation, and 3:1 contrast all pass.
+     --c-chart-peer is a more saturated step than --c-steel-500, which
+     reads as grey at mark size. */
+  --c-chart-peer: #2f5d94;
+  --c-chart-us: #9e2b25;
+
   --c-accent: #9e2b25;          /* accent on light surfaces */
   --c-accent-strong: #b8352d;   /* hover / emphasis */
   --c-accent-on-dark: #ea8b81;  /* accessible accent text on navy */
@@ -2401,6 +2409,126 @@ textarea {
   color: var(--c-ink-soft);
 }
 
+/* --- Social reach comparison -------------------------------------------
+   Horizontal bars, sorted descending. Two colours only: the peer group is
+   one recessive fill, APSEA is the accent, because the encoding is "them
+   and us" rather than seven separate identities. Every row prints its own
+   name and value, so colour carries nothing the text does not — the bars
+   are aria-hidden decoration.
+
+   No hover tooltip here by deliberate exception: all seven values are
+   permanently visible, so there is nothing for one to reveal.
+   ---------------------------------------------------------------------- */
+.reach-intro {
+  max-width: 58ch;
+  margin-top: var(--space-2xl);
+}
+
+.reach-intro__title {
+  font-size: var(--fs-h3);
+  font-weight: 800;
+  letter-spacing: -0.024em;
+  line-height: 1.2;
+  color: var(--c-ink);
+}
+
+.reach-intro__copy {
+  margin-top: var(--space-sm);
+  color: var(--c-ink-soft);
+}
+
+.reach {
+  margin-top: var(--space-lg);
+  padding: var(--space-lg);
+  border: 1px solid var(--c-paper-line);
+  border-radius: var(--radius-lg);
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.reach__caption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.35rem var(--space-md);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--c-paper-line);
+}
+
+.reach__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-eyebrow);
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  color: var(--c-steel-500);
+}
+
+.reach__note {
+  font-size: var(--fs-micro);
+  color: var(--c-ink-soft);
+}
+
+.reach__list {
+  display: grid;
+  gap: 0.7rem;                 /* keeps a clear surface gap between fills */
+}
+
+.reach__row {
+  display: grid;
+  grid-template-columns: 8.5rem minmax(0, 1fr) 5rem;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.reach__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-small);
+  font-weight: 700;
+  letter-spacing: 0.005em;
+  color: var(--c-ink);
+}
+
+.reach__track {
+  height: 15px;
+  border-radius: 2px;
+  background: var(--c-paper-alt);
+}
+
+.reach__bar {
+  display: block;
+  height: 100%;
+  min-width: 3px;              /* 0.09% would round to nothing on screen */
+  border-radius: 0 4px 4px 0;  /* data end rounded, baseline end square */
+  background: var(--c-chart-peer);
+}
+
+.reach__value {
+  font-size: var(--fs-small);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  color: var(--c-ink-soft);
+}
+
+/* The subject of the page, not a seventh category. */
+.reach__row--us .reach__name,
+.reach__row--us .reach__value {
+  color: var(--c-chart-us);
+  font-weight: 700;
+}
+.reach__row--us .reach__bar { background: var(--c-chart-us); }
+
+.reach__foot {
+  margin: var(--space-lg) 0 0;
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--c-paper-line);
+  font-size: var(--fs-small);
+  color: var(--c-ink-soft);
+}
+.reach__foot strong { color: var(--c-chart-us); }
+
 /* --- Gap section layout ------------------------------------------------ */
 .gap__grid {
   display: grid;
@@ -2624,6 +2752,13 @@ textarea {
     grid-template-columns: minmax(0, 1fr);
     gap: var(--space-xs);
   }
+
+  .reach__row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.3rem var(--space-sm);
+  }
+  .reach__track { grid-column: 1 / -1; grid-row: 2; }
+  .reach__value { text-align: right; }
 
   .site-footer__inner {
     grid-template-columns: repeat(2, minmax(0, 1fr));
