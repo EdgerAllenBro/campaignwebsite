@@ -1623,9 +1623,10 @@ textarea {
 
 
 /* --- Affiliations (membership logo grid) -------------------------------
-   Column counts are 2 and 5 only, never 3 or 4. There are ten logos, and
-   2 and 5 are the divisors that leave no half-empty final row — a single
-   orphaned mark under a full row reads as a loading failure. */
+   Flex rather than grid, so a final short row centres under the full ones
+   instead of hanging off the left edge. The set has grown twice already;
+   this way the layout stays right at any count without the column maths
+   having to be redone each time. */
 .orgs {
   margin-top: var(--space-2xl);
   text-align: center;
@@ -1651,19 +1652,18 @@ textarea {
 }
 
 .orgs__grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: var(--space-sm);
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-@media (min-width: 52rem) {
-  .orgs__grid { grid-template-columns: repeat(5, 1fr); }
-}
-
 .org {
+  /* Two up by default; the basis subtracts the single gap in the row. */
+  flex: 0 0 calc((100% - var(--space-sm)) / 2);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1672,6 +1672,11 @@ textarea {
   border: 1px solid var(--c-paper-line);
   border-radius: var(--radius);
   background: #fff;
+}
+
+@media (min-width: 52rem) {
+  /* Five up: four gaps to subtract. */
+  .org { flex-basis: calc((100% - 4 * var(--space-sm)) / 5); }
 }
 
 /* Fixed box with contain: the marks range from a wide wordmark to a
