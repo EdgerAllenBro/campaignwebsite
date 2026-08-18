@@ -1652,7 +1652,9 @@ textarea {
    cards align to the top and let the attributions sit where they land. */
 .endorsements__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  /* 23rem minimum -> two columns at desktop, so four cards sit 2x2
+     rather than wrapping 3+1. */
+  grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
   gap: var(--space-md);
   align-items: start;
   text-align: left;
@@ -2528,6 +2530,13 @@ textarea {
   color: var(--c-ink-soft);
 }
 .reach__foot strong { color: var(--c-chart-us); }
+
+.reach__key {
+  margin: var(--space-xs) 0 0;
+  font-size: var(--fs-micro);
+  line-height: 1.6;
+  color: var(--c-ink-soft);
+}
 
 /* --- Gap section layout ------------------------------------------------ */
 .gap__grid {
