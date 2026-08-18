@@ -1817,7 +1817,8 @@ textarea {
   color: var(--c-ink);
 }
 
-.expect__ref {
+/* Bylaws citation, used wherever a claim is sourced to an article. */
+.ref {
   white-space: nowrap;
   font-size: var(--fs-micro);
   color: var(--c-steel-500);
@@ -1860,6 +1861,71 @@ textarea {
 
 .expect__copy {
   margin-top: var(--space-xs);
+  font-size: var(--fs-small);
+  line-height: 1.6;
+  color: var(--c-ink-soft);
+}
+
+
+/* --- Election steps ----------------------------------------------------
+   A numbered sequence rather than another card grid: the circular badge
+   carries the order, so the four read as steps and not as a menu.
+   ---------------------------------------------------------------------- */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: var(--space-md);
+}
+
+.steps__item {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-lg);
+  border: 1px solid var(--c-paper-line);
+  border-radius: var(--radius-lg);
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.steps__num {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 2.6rem;
+  height: 2.6rem;
+  margin-bottom: var(--space-md);
+  border-radius: 50%;
+  background: var(--c-navy-800);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.steps__title {
+  font-size: var(--fs-h4);
+  font-weight: 700;
+  letter-spacing: -0.016em;
+  line-height: 1.25;
+  color: var(--c-ink);
+}
+
+.steps__copy {
+  margin-top: var(--space-xs);
+  font-size: var(--fs-small);
+  line-height: 1.6;
+  color: var(--c-ink-soft);
+}
+
+/* The disclaimer is load-bearing: it keeps a campaign page from reading
+   as an official election notice. */
+.steps__note {
+  max-width: 62ch;
+  margin: var(--space-lg) 0 0;
+  padding-left: var(--space-md);
+  border-left: 3px solid var(--c-steel-300);
   font-size: var(--fs-small);
   line-height: 1.6;
   color: var(--c-ink-soft);
